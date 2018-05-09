@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome.component';
 import { HtmlcssjavascriptComponent } from './basics/htmlcssjavascript/htmlcssjavascript.component';
 import { UsingCssComponent } from './basics/htmlcssjavascript/using-css.component';
+import { UsingJsComponent } from './basics/htmlcssjavascript/using-js.component';
 
 /**
  * The constant variable `routes` specifies how our SPA (Single Page Application) handles different 'pages'. There are two required parts and several
@@ -68,6 +69,10 @@ const routes: Routes = [
         component: UsingCssComponent
       }
     ]
+  },
+  {
+    path: 'jsInfo',
+    component: UsingJsComponent
   },
 
 //This needs to be last, This says anything that is not a path above, get redirected to X component.

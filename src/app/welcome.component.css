@@ -1,0 +1,11 @@
+h3 {
+    text-align: center;
+    border-bottom: 5px double black;
+}
+
+dx-button {
+    border: 2px ridge black;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom:5px
+}

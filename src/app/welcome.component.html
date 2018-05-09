@@ -63,5 +63,21 @@
   </p>
 </div>
 
-<dx-button type='success' routerLink='/basics' routerLinkActive='true' text='HTML and CSS'></dx-button>
+<dx-box direction='row'>
+  <dxi-item [ratio]='1'>
+    <h3>HTML/CSS/JavaScript Stuff</h3>
+    <dx-button type='success' routerLink='/basics' routerLinkActive='true' text='HTML and CSS'></dx-button>
+    <dx-button type='success' text='JavaScript Stuff' routerLink='/jsInfo'></dx-button>
+  </dxi-item>
+
+  <dxi-item [ratio]='1'>
+      <h3>Angular Stuff</h3>
+
+      <div></div>
+  </dxi-item>
+
+  <dxi-item [ratio]='1'>
+      <h3>Node Stuff</h3>
+  </dxi-item>
+</dx-box>
 

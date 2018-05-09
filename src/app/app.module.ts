@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 import { HtmlcssjavascriptComponent } from './basics/htmlcssjavascript/htmlcssjavascript.component';
 import { WelcomeComponent } from './welcome.component';
 import { UsingCssComponent } from './basics/htmlcssjavascript/using-css.component';
+import { UsingJsComponent } from './basics/htmlcssjavascript/using-js.component';
 
 
 
@@ -53,7 +54,7 @@ import * as dateFormat from 'dateformat';
   declarations: [
     AppComponent, //the app.component
     HtmlcssjavascriptComponent, //the Htmlcssjavascript.component
-    WelcomeComponent, UsingCssComponent, //the Welcome.component
+    WelcomeComponent, UsingCssComponent, UsingJsComponent, //the Welcome.component
 
     
   ],
