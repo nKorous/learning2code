@@ -19,6 +19,9 @@ export class HtmlcssjavascriptComponent implements OnInit {
   hasSubmitted: boolean = false
   showCSSStuff: boolean = false
 
+  msg: string = ''
+  num: string = ''
+
   cssShowButton: string = 'Show Some Cool CSS Struff'
 
   exampleTable = [
@@ -80,5 +83,21 @@ export class HtmlcssjavascriptComponent implements OnInit {
       this.cssShowButton = 'Show Some Cool CSS Stuff'
     }
   }
+
+  tryConsoleLog(){
+    console.log(this.msg)
+
+    console.log('pushed this button')
+
+    
+  }
+
+  someName(data){
+
+    console.log(data)
+
+    data.element.innerText = 'I CHANGED A THING'
+  }
+
 
 }

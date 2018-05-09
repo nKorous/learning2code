@@ -198,6 +198,13 @@
   <dx-button class='nextButton' type='success' text='{{ cssShowButton }}' (onClick)='showCSS()'></dx-button>
   <dx-button class='jsButton' type='success' text='Some Cool JavaScript Stuff' routerLink='/jsInfo'></dx-button>
 
+  <input [(ngModel)]='msg' type='text' placeholder='type something'>
+  <input [(ngModel)]='num' type='text' placeholder='something Else'>
+  
+  <br><dx-button type='primary' (onClick)='someName($event);' text='push me'></dx-button>
+
+  {{ msg }}
+
 
 
   <div *ngIf='showCSSStuff'>
