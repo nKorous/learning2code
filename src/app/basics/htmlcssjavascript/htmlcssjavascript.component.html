@@ -1,0 +1,237 @@
+
+<div *ngIf='!showCSSStuff'>
+  <div id='loadSomething'>
+    <h1 style='text-align: center'>Lets look at some common HTML tags</h1>
+    <h3 style='text-align: center' (click)='foo()'>Click on this subtitle to hide/show examples.</h3>
+  
+    <textarea style='align-content: center; width: 95%; height:800px; border: 0px; font-size: 16pt; margin: 5px;' disabled [hidden]='hideMe'>
+      <div></div> //the general 'container that holds stuff'. Divs are a good way to group like content (things that are styled together for instance) and keep them together
+  
+      <p></p> //the paragraph tag can be used to seperate paragraphs of text. If you use <p></p> tags you wont have to <br> each line or paragraph.
+      
+      <a></a> //the anchor tag can be used to anchor text or some other element to an area in the DOM. anchors are also useful for hyperlinks <a href='www.google.com'>go here</a>
+  
+      <table></table> //the table tag tells the browser to look for table elements and format the info like a table. See the table tags below:
+  
+        <tr></tr> //table row. Used to create a new line. Usually used to seperate sections (header, data, footer)
+  
+        <th></th> //table header. This is used for column names or the title of the table.
+  
+        <td></td> //table data/cell. This is where the information that you would like to display goes.
+      
+      <br> //break tag. This will start a new line
+
+      <ul></ul> //unordered list. This is used to make a list of "things" where order does not matter
+        
+        <li></li> //list item. Used to create a new item in the unordered list. Each line item can have explicit CSS or javascript events on it.
+  
+      <input> //tells the browser to create an input of the type specified. Some common input types are text, checkbox, and password, to name a few.
+  
+      <form></form> //groups together inputs to create a form like layout. Typically this is input information that will be sent back to a server.
+  
+      <button></button> //creates a button that can be pressed. Usually buttons execute some sort of javascript function and/or redirect to another page.
+        
+      //There are MANY other HTML elements, i am just putting some of the basic ones here. We'll see them below.
+  
+    </textarea>
+  </div>
+  
+  <div class='buttonClass'>
+    <dx-button id='paragraph' type='default' (onClick)='showInfo($event)' text='&lt;p&gt; &lt;/p&gt;'></dx-button>
+    <dx-button id='anchor' type='default' (onClick)='showInfo($event)' text='&lt;a&gt; &lt;/a&gt;'></dx-button>
+    <dx-button id='table' type='default' (onClick)='showInfo($event)' text='&lt;table&gt; &lt;/table&gt;'></dx-button>
+    <dx-button id='break' type='default' (onClick)='showInfo($event)' text='&lt;br&gt;'></dx-button>
+    <dx-button id='list' type='default' (onClick)='showInfo($event)' text='&lt;list&gt; &lt;/list&gt;'></dx-button>
+    <dx-button id='input' type='default' (onClick)='showInfo($event)' text='&lt;input&gt;'></dx-button>
+    <dx-button id='form' type='default' (onClick)='showInfo($event)' text='&lt;form&gt; &lt;/form&gt;'></dx-button>
+  </div>
+  
+    <div class='showInfoClass' *ngIf="loadedInfo === 'paragraph'">
+      <p style='color: red; font-size: 14pt; text-align:center;'>
+        This section has been broken out
+      </p>
+  
+      <p style='color: darkgreen; font-size: 16pt; text-align:center;'>
+        Into paragraphs using the &lt;p&gt; tags.
+      </p>
+  
+      <p style='color: darkblue; font-size: 18pt; text-align:center;'>
+        As you can see, each of these paragraph tags are on a seperate line, and styled slightly different.
+      </p>
+    </div>
+  
+    <div class='showInfoClass' *ngIf="loadedInfo === 'anchor'">
+        <a href='www.google.com'>This is an anchor used as a hyperlink</a>
+    </div>
+  
+    <div class='showInfoClass' *ngIf="loadedInfo === 'table'">
+        <table class='exampleTable'>
+          <tr>
+            <th colspan='5'>
+              This... Is... A... TABLE!!!!
+            </th>
+          </tr>
+          <tr>
+            <th>#</th>
+            <th>First Column</th>
+            <th>Second Column</th>
+            <th>Third Column</th>
+            <th>Fourth Column</th>
+          </tr>
+          <tr *ngFor='let data of exampleTable'>
+            <td>{{ data.id }}</td>
+            <td>{{ data.first }}</td>
+            <td>{{ data.second }}</td>
+            <td>{{ data.third }}</td>
+            <td>{{ data.fourth }}</td>
+          </tr>
+        </table>
+    </div>
+  
+    <div class='showInfoClass' *ngIf="loadedInfo === 'break'">
+        this <br> is <br> a <br>break
+  
+        <br>
+  
+        if i dont put breaks
+        even though there are spaces
+        (this only really shows that there are carrige returns when you look at the sourcecode.......)
+  
+        <br>
+    </div>
+
+    <div class='showInfoClass' *ngIf="loadedInfo === 'list'">
+        <ul style='text-align: left !important'>
+          <li style='background-color: black; color: red'> This is the first line.</li>
+          <li style='font-style:italic; background-color: pink; color: blue'>This is the second line. As you can see the style differes from the first</li>
+          <li>This is the Third item:
+            <ul>
+              <li>As you can see, even a line item can have a list inside of it.</li>
+              <li style='color: orangered'>This is the second item of the second list</li>
+            </ul>
+          </li>
+          <li>You can also have other HTML tags in your list: {{ ulText }}
+            <ul>
+              <li>text: <input type='text' [(ngModel)]='ulText'> </li>
+              <li>Checkbox: <input type='checkbox'> </li>
+              <li><a href='https://media0.giphy.com/media/kFgzrTt798d2w/giphy.gif'>Hyperlink</a></li>
+              <li><dx-button type='danger' text='A Button' style='width: 100%'></dx-button></li>
+            </ul>
+          </li>
+          <li>Alright... I think this is long enough now...</li>
+        </ul>
+    </div>
+  
+    <div [style.background-color]='colorPicker' class='showInfoClass' *ngIf="loadedInfo === 'input'">
+        <input [(ngModel)]='typeCheckbox' type='checkbox' value='true'>type Checkbox: {{ typeCheckbox }}
+        <br>
+        type text: {{ typeText }} <input [(ngModel)]='typeText' type='text' placeholder='You can type stuff here!!' style='width: 250px;'> 
+        <br>
+        type password: {{ typePassword }} <input [(ngModel)]='typePassword' type='password' style='width: 250px;' placeholder='type in something seceret!!'> 
+        <br>
+        Color Picker: {{colorPicker}} <input type='color' [(ngModel)]='colorPicker'> 
+    </div>
+  
+    <div class='showInfoClass' *ngIf="loadedInfo === 'form'">
+        <div *ngIf='hasSubmitted'>
+            <p>
+              What is your name? {{ exampleName }}
+            </p>
+            <div *ngIf='exampleName === "Beetlejuice" || exampleName === "beetlejuice"'>
+              <img src='../../../assets/beetlejuice.gif'>
+            </div>
+            <p>
+              What is your quest? {{ exampleQuest }}
+            </p>
+            <p>
+              WHAT... is the airspeed velocity of an unlaiden swallow?
+              <br>
+              <span style='font-size: 24pt; text-align: center; padding: 5px; margin: 10px'> {{exampleSelect}}</span>
+            </p>
+            <div *ngIf='exampleSelect === "African or European?"'>
+              <img src='../../../assets/grailIDK.gif'>
+            </div>
+            <div *ngIf='exampleSelect === "Go away or I shall taunt you a second time"'>
+              <img src='../../../assets/grailTaunt.webp'>
+          </div>
+          <div *ngIf='exampleSelect === "Something with coconuts."'>
+            <img src='../../../assets/grailCoconuts.gif'>
+          </div>
+          <div *ngIf='exampleSelect === "Ask the knights who say Ni"'>
+            <img src='../../../assets/grailKnightsNi.gif'>
+          </div>
+          <div *ngIf='exampleSelect === "3.55 m/s^2"'>
+            <img src='../../../assets/sheldonPapers.gif'>
+          </div>
+      </div>
+
+
+
+        <form class='exampleForm' name='exampleForm'>
+          <span style='text-align: center; margin-bottom: 15px;'>This is the form title</span>
+          <br>
+          <br>
+          <br>
+          <label>What is your name?</label><br>
+             <input [(ngModel)]='exampleName' name='exName' type='text'  placeholder='Beetlejuice, Beetlejuice, Bee...'>
+          <br>
+          <label>What is your quest?</label><br>
+            <input type='text' [(ngModel)]='exampleQuest' name='exQuest' placeholder='...'>
+          <br>
+          <label>WHAT... is the airspeed velocity of an unlaiden swallow? </label>
+          <select [(ngModel)]='exampleSelect' name='exSelect'><br>
+            <option disabled>Select One</option>
+            <option>3.55 m/s^2</option>
+            <option>Something with coconuts.</option>
+            <option>Go away or I shall taunt you a second time</option>
+            <option>Ask the knights who say Ni</option>
+            <option>African or European?</option>
+          </select>
+          <br>
+
+          <dx-button type='success' text='Submit' (onClick)='showForm()' style='padding: 10px; margin-top: 25px'></dx-button>
+        </form>
+ 
+  </div>
+  </div>
+
+  <dx-button class='nextButton' type='success' text='{{ cssShowButton }}' (onClick)='showCSS()'></dx-button>
+
+
+
+  <div *ngIf='showCSSStuff'>
+    <br><br>
+      <app-using-css></app-using-css>
+  </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- at the end of the body, before you close it, you usually put your script tags for JS/jQuery functions.
+      For the purpose of this lesson I will include some javascript in a script tag so that you can see
+      what it looks like. Because this is an Angular app, it handles typescript (which is a superset of JavaScript)
+      in the .ts file. -->
+  
+  
+    <script>
+    function foo(){
+      alert('You pressed something that foo() to run');
+    }; 
+    
+    /***
+    in this application, because of typescript, the javascript is not going to run very well. I have copied this function into the welcome.component.ts file and it is actually executing from there
+    ***/
+  
+    </script>
+  
+    <!-- </body> This is generally where you would close the body tag. Again, this is an Angular application so it knows how/when to close it-->
+  
+    <!-- after the body is typically where you would put your footer, if applicable. I am not putting one in for this lesson. If you would like to see how it works i can
+      Send you some of my old code-->
+  

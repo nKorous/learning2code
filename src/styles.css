@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*** Uncomment these import statements if you are running this locally. 
+** If running in stackblitz they need to be commented out 
+***/
+
+/*
+@import "../node_modules/devextreme/dist/css/dx.common.css";
+@import "../node_modules/devextreme/dist/css/dx.light.css";
+*/
+
+.nextButton {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    height: 55px;
+    width: 250px;
+    padding: 10px;
+    border: 3px solid black;
+}

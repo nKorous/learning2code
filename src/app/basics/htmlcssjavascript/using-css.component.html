@@ -1,0 +1,126 @@
+    <h1 style='text-align: center'>Lets look at some common CSS Styles</h1>
+    <h3 style='text-align: center' (click)='foo()'>Click on this subtitle to hide/show examples.</h3>
+      
+    <textarea style='align-content: center; width: 95%; height:800px; border: 0px; font-size: 16pt; margin: 5px;' disabled [hidden]='hideMe'>
+        Here are three ways to style something:
+
+            #useID {
+                //You can style on the ID. Use the '#' and then the ID of the element you would like to style.
+                //Styling on ID's does not make re-usable code. I would suggest keeping this to a minimum.
+                //For instance, if you wanted ONLY the <h1></h1> with the ID of 'firstH1' a little different
+                //than other <h1></h1>, you could:
+                    #firstH1 {
+                        font-weight: 900;
+                        font-style: italics;
+                        font-family: 'comic-sans ms' <= dont EVER use this font in a professional environment...
+                    }
+            }
+
+            .useClass {
+                //You can style on the elements class. Styling on the class allows for re-usable code and 
+                //makes keeping like elements in the same style much easier. All elements that have this
+                //class will have this style. For instance, if you wanted anything with the class someClass
+                //to have a black background with white text, you could: 
+                    .someClass {
+                        background-color: black;
+                        color: white;
+                    }
+            }
+
+            useHTMLTag {
+                //Styling on the HTML tag will change the style set by default for anything using that 
+                //tag. For instance. If you wanted all of your <h1></h1> elements to be 72pt font and
+                //blue. You could use: 
+                    h1 {
+                        color: blue;
+                        font-size: 72pt
+                    }
+            }
+
+        Below are some common CSS stylings and some definitions. Please note that this is nowhere near a comprehensive list.
+            --FONT--
+            font-size: Xpt || Xpx => this is the size of font in standard pt sizes, same as Word and other text processors use. You can also use px.
+            font-weight: 100|| bold || 900 => how dark (bold) you want something.
+            font-style: italics || underlined, etc => special stylings for the text.
+            text-align: center || left || right
+            
+            --COLORS--
+            background-color: purple => the background color of the element being styled.
+            color: yellow => the text color of the element being styled.
+
+            --POSITION--
+            position: 
+                    relative => spaced relative to its parent element
+                    fixed => fixed in place and does not move, even if scrolled (alot of nav bars use fixed)
+                    absolute => regardless of other stylings and position, absolute positions ignore other changes.
+            top || bottom || left || right: Xpx => number of pixels in the respective direction, according to the position styling
+
+            --BORDERS--
+            border: Xpx Xcolor XborderType => 3px solid black will give you a 3px, solid black border around the element on all sides.
+            border-DIRECTION: Xpx Xcolor XborderType => where DIRECTION is top, bottom, left, right. Only styles the respective side.
+            border-radius: Xpx => changes how far the radius of the border is. The higher the px, the more round the border will be.
+            border-radius-DIRECTION: Xpx => where DIRECTION is top, bottom, left, right. Only styles the respective side.
+
+
+            --PADDING & Margins--
+            margin: Xpx => Sets the number of whitespace pixels between the styled element and all other elements on all sides.
+            margin-DIRECTION: Xpx => Where DIRECTION is top, bottom, left, right. Only sets a margin for the respective side.
+            padding: Xpx => Sets the number of whitespace pixels between the content of an element and the outside border. Usefull for <td></td>, <button></button>, etc.
+            padding-DIRECTION: Xpx => Where DIRECTION is top, bottom, left, right. Only sets padding for the respective side.
+
+            --SIZE--
+            width: Xpx || X% => Sets the width of an element relative to it's containing element. Can be in pixels or percentage, amont others.
+            max-width || min-width: Sets the respective min or max widths an element can go.
+            height: Xpx || X% => Sets the height of an element relative to it's containing element. Can be in pixels or percentage, amont others.
+            max-height || min-height: Sets the respective min or max height an element can go.
+
+
+            ***AS STATED ABOVE, THIS IS NOT A COMPREHENSIVE LIST OF CSS STYLINGS. PLEASE VISIT WWW.W3SCHOOLS.COM TO LEARN MORE***
+    </textarea>
+
+    <h2 style='text-align: center;'>Lets play with some CSS shall we?</h2>
+
+    <div style='text-align: center; border: 5px solid black; background-color:  lightgray; border-radius: 5px'>
+        <p class='examplePClass'>Background Color: <input type='color' [(ngModel)]='exampleBG' placeholder='#000000'></p>
+        <p class='examplePClass'>Font Color: <input type='color' [(ngModel)]='exampleFC' placeholder='#FFFFFF'></p>
+        <p class='examplePClass'>Font Size: <input type='number' [(ngModel)]='exampleFS' placeholder='16'></p>
+        <p class='examplePClass'>Text Alignment: <select [(ngModel)]='exampleTA'>
+                                                    <option>Left</option>
+                                                    <option>Right</option>
+                                                    <option>Center</option>
+                                                </select></p>
+        <p class='examplePClass'>Border: <select [(ngModel)]='exampleBorder'>
+                                            <option>1px solid black</option>
+                                            <option>5px solid red</option>
+                                            <option>33px dotted green</option>
+                                            <option>3px dotted yellow</option>
+                                            <option>10px double black</option>
+                                            <option>8px groove orange</option>
+                                            <option>none</option>
+                                            <option>12px dashed purple</option>
+                                        </select></p>
+        <p class='examplePClass'>Border Radius: <input type='number' [(ngModel)]='exampleRadius' placeholder='2'></p>
+        <p class='examplePClass'>Padding: <input type='number' [(ngModel)]='examplePadding' placeholder='1'></p>
+        <p class='examplePClass'>Width: <input type='number' [(ngModel)]='exampleWidth' placeholder='900'></p>
+        <p class='examplePClass'>Height: <input type='number' [(ngModel)]='exampleHeight' placeholder='400'></p>
+        <p class='examplePClass'>Margin: <input type='number' [(ngModel)]='exampleMargin' placeholder='1'></p>
+    </div>
+
+    <div 
+        [style.background-color]='exampleBG'
+        [style.color]='exampleFC'
+        [style.font-size.px]='exampleFS' 
+        [style.text-align]='exampleTA' 
+        [style.border]='exampleBorder'
+        [style.border-radius.px]='exampleRadius'
+        [style.padding.px]='examplePadding'
+        [style.width.px]='exampleWidth'
+        [style.height.px]='exampleHeight'
+        [style.margin.px]='exampleMargin'>
+    This is some text that you can see the changes made by selecting various CSS properties.<br>
+    I have put a couple extra lines to see what it does. <br>
+        <ul [style.text-align]='exampleTA'>
+            <li>Here is a list... What does it do?</li>
+            <li>This Statement Is False.</li>
+        </ul>
+    </div>

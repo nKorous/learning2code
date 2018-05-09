@@ -1,0 +1,67 @@
+<!-- <head> This would normally start the HEAD section. Styles, links to css files, and the title are usually what is here.
+      Usually you will want to load javascript scripts in this section ONLY if there are dependancies in the body that
+      must be loaded before the DOM renders the rest (jQuery and Bootstrap for example)-->
+
+
+<!-- put your title tags hereish
+  
+  <title>Some Awesome Title</title>
+
+  If you are using the Angular CLI the title automagically set in your angular-cli.json file and you can change it there.
+-->
+<style>
+  /***  
+  This is CSS in the head section (or what would be the head section) in the document itself.
+  This is probably the only time you will see ME do this, and it's only for learning purposes.
+
+  ***Remember***
+    .className = class,
+    #idName = id
+    tagName = tag
+
+    you can also use an extended notation such as:
+
+    div .someClass -> This will ONLY be used for div elements that use the someClass class
+    div > p -> if the div has styling that would superceed the p styling, the div styling wins. This can also work visa - versa
+***/
+  .helloWorld {
+      color: darkorange;
+      font-size: 42pt;
+      border: 10px solid black;
+      border-radius: 5px;
+      text-align: center;
+  }
+
+  #stackblitzPlug {
+    color:white;
+    background-color: red;
+    border: 4px dotted black;
+    text-align: center;
+    align-self: center;
+    margin-top: 5px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 5px;
+    font-weight: 900;
+    font-size: 20pt;
+
+  }
+</style>
+
+<!--</head> This is usually where you would close the head tag-->
+
+<!-- <body> This is normally where you would start the body tag. Becausae i am making this in an Angular app to fasilitate an easier transition, it is already assumed by Angular.-->
+
+<h1 class='helloWorld'>Hello World 
+  <br><a style='font-size: 18pt;'>(like it's 1995...)</a></h1>
+
+<div id='stackblitzPlug'>
+  <p>
+    <strong>This is a not so shameless plug for using <a href='http://stackblitz.com'>stackblitz.com</a> for building prototype apps and learning.
+    This demo is created on and for stackblitz. <br>
+    Stackblitz is such an awesome platform!!.</strong>
+  </p>
+</div>
+
+<dx-button type='success' routerLink='/basics' routerLinkActive='true' text='HTML and CSS'></dx-button>
+
