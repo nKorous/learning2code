@@ -21,6 +21,7 @@ import { UsingJsComponent } from './basics/htmlcssjavascript/using-js.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import { MatCardModule } from '@angular/material'
 
 
 
@@ -75,6 +76,7 @@ import * as dateFormat from 'dateformat';
 
     //This is stuff from angular materials
     MatProgressSpinnerModule,
+    MatCardModule,
   ],
   providers: [ 
     //providers are services that *PROVIDE* something to the rest of the application. Mostly this is services, remember, things trickle down but do not bubble

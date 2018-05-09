@@ -1,1 +1,94 @@
 <dx-button class='nextButton' type='success' text='Go Back Home' routerLink='/welcome'></dx-button>
+
+<dx-box direction='row'>
+    <dxi-item [ratio]='1'>
+        <div class='atwoodsLaw'>
+            <mat-card>
+                <h1 (click)="hideDef()">Atwood's Law</h1 >
+                <p [hidden]='defHidden'>
+                "Any application that <strong>CAN</strong> be written in JavaScript, <strong>WILL</strong> eventually be written in JavaScript"
+                </p>
+                <p [hidden]='defHidden'>~Jeff Atwood</p>
+            </mat-card>
+        </div>
+    </dxi-item>
+</dx-box>
+
+<dx-box direction='row'>
+    <dxi-item [ratio]='1'></dxi-item>
+    <dxi-item [ratio]='1'>
+        <div class='cardClass'>
+            <mat-card >
+                <h3 (click)="hideJSDef();">Why JavaScript?</h3>
+                <div [hidden]='whyJS' [style.background-color]='awesomeBackground'>
+                    <ul>
+                        <li >Cause Jeff Atwood said so...</li>
+                        <li >Cause its <a [style.color]='awesomeColor'>AWESOME!</a></li>
+                        <li >JavaScript allows us to "Do the stuff" instead of just "See the stuff"</li>
+                        <li >Angular/React/vue/Express etc are all JavaScript Frameworks, unless you live in 1990, you will use JavaScript</li>
+                        <li >Once you understand the basic syntax, its really easy</li>
+                        <li >ITS NOT jQUERY!!!! HURRAY!</li>
+                        <li >Typescript</li>
+                        <li >Typescript</li>
+                        <li >Typescript</li>
+                        <li >Typescript</li>
+                        <li >Typescript</li>
+                        <li >Typescript</li>
+                        <ul>
+                            <li >Typescript</li>
+                            <li >Typescript</li>
+                            <li >Typescript</li>
+                        </ul>
+                        <li >Typescript</li>
+                    </ul>
+                </div>
+            </mat-card>
+        </div>
+    </dxi-item>
+    <dxi-item [ratio]='1'></dxi-item>
+</dx-box>
+
+<dx-box direction='row'>
+    <dxi-item [ratio]='1'>
+        <mat-card class='cardClass'>
+            <h3>Some JavaScript Syntax to Remember</h3>
+            <mat-card class='cardInside'>
+                <mat-card-title (click)='hideFuncDef()'>
+                    Functions! Functions! Functions!
+                </mat-card-title>
+                <mat-card-content>
+                    Functions are AWESOME!!!!!
+                    <textarea [hidden]='hideFunc'  disabled style='border: 2px solid black; background-color: #F0F0F0; width: 100%; height: 600px'>
+                        Here is some text
+
+                        Here is another line
+
+
+                        function(){
+                            //Do Stuff
+                        }
+                    </textarea>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class='cardInside'>
+                    <mat-card-title (click)='hideVarDef()'>
+                        Variables.... ARE..... ..... ..... Variable
+                    </mat-card-title>
+                    <mat-card-content>
+                        They are pretty cool i guess
+                        <textarea [hidden]='hideVar'  disabled style='border: 2px solid black; background-color: #F0F0F0; width: 100%; height: 600px'>
+                            Here is some text
+    
+                            Here is another line
+    
+    
+                            function(){
+                                //Do Stuff
+                            }
+                        </textarea>
+                    </mat-card-content>
+                </mat-card>
+        </mat-card>
+    </dxi-item>
+</dx-box>
