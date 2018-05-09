@@ -9,6 +9,18 @@
 @import "../node_modules/devextreme/dist/css/dx.light.css";
 */
 
+/***
+This is the angular material theme. If you are running this on Stackblitz it may give you issues. If it does, please comment it out and use the CDN
+***/
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.subtitleClass {
+    font-style: italic;
+    font-size: 22pt;
+    text-align: center;
+}
+
 .nextButton {
     position: absolute;
     bottom: 15px;

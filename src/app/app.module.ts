@@ -18,6 +18,10 @@ import { HtmlcssjavascriptComponent } from './basics/htmlcssjavascript/htmlcssja
 import { WelcomeComponent } from './welcome.component';
 import { UsingCssComponent } from './basics/htmlcssjavascript/using-css.component';
 import { UsingJsComponent } from './basics/htmlcssjavascript/using-js.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+
 
 
 
@@ -66,7 +70,11 @@ import * as dateFormat from 'dateformat';
 
     //this is stuff from devextreme... We will use and talk about it later, along with angular material.
     DxButtonModule,
-    DxBoxModule
+    DxBoxModule,
+    BrowserAnimationsModule,
+
+    //This is stuff from angular materials
+    MatProgressSpinnerModule,
   ],
   providers: [ 
     //providers are services that *PROVIDE* something to the rest of the application. Mostly this is services, remember, things trickle down but do not bubble
